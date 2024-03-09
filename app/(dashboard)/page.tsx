@@ -16,7 +16,6 @@ export default function DashboardPage({ searchParams }: DashboardPageProps) {
 
 	return (
 		<div className='flex-1 p-6  h-[calc(100%-80px)]'>
-			{JSON.stringify(searchParams)}
 			{!organization ? (
 				<EmptyOrg />
 			) : (
