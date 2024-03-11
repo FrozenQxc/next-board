@@ -1,4 +1,5 @@
 import { ConvexClientProvider } from '@/providers/convex-client-provider'
+import ModalProvider from '@/providers/modal-provider'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Toaster } from 'sonner'
@@ -22,8 +23,11 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={inter.className}>
-				<Toaster />
-				<ConvexClientProvider>{children}</ConvexClientProvider>
+				<ConvexClientProvider>
+					<Toaster />
+					<ModalProvider />
+					{children}
+				</ConvexClientProvider>
 			</body>
 		</html>
 	)
